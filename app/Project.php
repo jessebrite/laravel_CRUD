@@ -10,6 +10,7 @@ class Project extends Model
 
     public function tasks()
     {
+    	// 1:m relationship
     	return $this->hasMany(Task::class);
     }
 }
