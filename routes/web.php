@@ -23,5 +23,7 @@ Route::get('/{sidenotes}', 'ProjectController@sideNotes')->name('sideNotes.index
 
 Route::post('/project', 'ProjectController@store');
 
+Route::patch('tasks/{task}', 'ProjectTasksController@update');
+
 // Defining route names
 // $router->get('/{project}/{create}', 'ProjectController@create');
