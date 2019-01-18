@@ -36,9 +36,8 @@ class ProjectController extends Controller
     	return redirect('/project');
     }
 
-    function edit($id)
+    function edit(Project $project)
     {
-    	$project = Project::findOrFail($id);
 
     	return view('project.edit', compact('project'));
     }
@@ -52,7 +51,7 @@ class ProjectController extends Controller
 
         $project = Project::findOrFail($id);
 
-         // Project::update($validated);
+        // Project::update($validated);
 
     	$project->title = request('title');
     	$project->description = request('description');
@@ -62,9 +61,9 @@ class ProjectController extends Controller
     	return redirect('/project');
     }
 
-    function destroy($id)
+    function destroy(Project $project)
     {
-    	Project::findOrFail($id)->delete();
+    	$project->delete();
 
     	return redirect('/project');
     }

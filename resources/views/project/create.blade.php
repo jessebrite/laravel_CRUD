@@ -3,7 +3,7 @@
 @section('title', 'Simple Form')
 
 @section('content')
-	<h1>Create a New Project</h1>
+	<h1 class="title">Create a New Project</h1>
 	<div>
 		<form action="/project" method="POST">
 		@csrf
@@ -17,15 +17,8 @@
 			<div class="field">
 				<button class="button is-link" type="submit">Create Project</button>
 			</div>
-			@if($errors->any())
-				<div class="notification is-danger">
-					<ul>Loop through the errors array and echo if any
-						@foreach($errors->all() as $error)
-							<li>{{ $error }}</li>
-						@endforeach
-					</ul>
-				</div>
-			@endif
+			
+			@include('errors')
 		</form>
 	</div>
 @endsection

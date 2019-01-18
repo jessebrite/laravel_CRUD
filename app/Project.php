@@ -13,4 +13,9 @@ class Project extends Model
     	// 1:m relationship
     	return $this->hasMany(Task::class);
     }
+
+    function addTask($task)
+    {
+    	$this->tasks()->create($task);
+    }
 }

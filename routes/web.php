@@ -21,7 +21,7 @@ Route::resource('/project', 'ProjectController');
 
 Route::get('/{sidenotes}', 'ProjectController@sideNotes')->name('sideNotes.index');
 
-Route::post('/project', 'ProjectController@store');
+Route::post('/project/{project}/tasks', 'ProjectTasksController@store');
 
 Route::patch('tasks/{task}', 'ProjectTasksController@update');
 
